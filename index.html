@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="StartTimer()">Start Timer</button>
+<button onclick="StopTimer()">Stop Timer</button>
+<button onclick="ResetTimer()">Reset Timer</button>
+
+<script>
+    var i,c=60;
+    //var paused=false;
+        function StartTimer() {
+           i=setInterval(() => {
+                c = c - 1;
+                console.log(c)
+            }, 1000)
+        }
+     function StopTimer() {
+        clearInterval(i);
+     }
+     function ResetTimer(i) {
+         window.clearInterval(i);
+         var j=60;
+         setInterval(()=>{
+             j=j-1;
+             console.log(j);
+         },1000);
+     }
+
+</script>
+</body>
+</html>
