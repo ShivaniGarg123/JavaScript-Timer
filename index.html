@@ -4,30 +4,42 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<button onclick="StartTimer()">Start Timer</button>
-<button onclick="StopTimer()">Stop Timer</button>
-<button onclick="ResetTimer()">Reset Timer</button>
-
+<body style="background-color: rosybrown">
+<center>
+    <h1 style="color: darkmagenta">Timer</h1>
+    <br/><br/><br/><br/>
+    <h4 style="color: black; border: black " >Note 1: To reset timer, first stop it !!!</h4>
+    <h4 style="color: black; border: black " >Note 2: To resume timer, after stopping,just start the timer again !!!</h4>
+    <button onclick="StartTimer()">Start Timer</button>
+    <button onclick="StopTimer()">Stop Timer</button>
+    <button onclick="ResetTimer()">Reset Timer</button>
+    <br/><br/><br/>
+    <p id="demo"></p>
+</center>
 <script>
     var i,c=60;
-    //var paused=false;
-        function StartTimer() {
-           i=setInterval(() => {
+    function StartTimer() {
+        i=setInterval(()=>{
+            if(c>0) {
                 c = c - 1;
-                console.log(c)
-            }, 1000)
-        }
+               document.getElementById("demo").innerHTML=c;
+            }
+        },1000)
+
+    }
      function StopTimer() {
         clearInterval(i);
      }
      function ResetTimer(i) {
          window.clearInterval(i);
          var j=60;
-         setInterval(()=>{
-             j=j-1;
-             console.log(j);
-         },1000);
+             setInterval(() => {
+                 if(j>0) {
+                     j = j - 1;
+                    document.getElementById("demo").innerHTML=j;
+                 }
+             }, 1000);
+
      }
 
 </script>
